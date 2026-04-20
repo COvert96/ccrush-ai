@@ -205,3 +205,10 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# GitHub Copilot
+.github/agents/
+.github/instructions/
+.github/prompts/
+.github/skills/
+agent-output/

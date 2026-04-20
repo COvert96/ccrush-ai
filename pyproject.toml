@@ -1,0 +1,36 @@
+[project]
+name = "ccrush-ai"
+version = "0.1.0"
+description = "Autonomous Candy Crush-style game bot for Windows"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.12.5",
+    "pydantic-settings>=2.13.1",
+    # Screen capture -- DXGI path (Windows only); mss is the fallback
+    "dxcam>=0.0.5",
+    "mss>=9.0.1",
+    # Computer vision
+    "opencv-python>=4.11.0",
+    "numpy>=2.2.0",
+    # Windows window management and input injection
+    "pywin32>=310",
+    # OCR for turn counter and score regions
+    "pytesseract>=0.3.13",
+    # Structured logging
+    "loguru>=0.7.3",
+    # Calibration TUI
+    "rich>=14.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.1",
+    "pytest>=9.0.2",
+    "ruff>=0.15.7",
+    # Property-based testing for move legality
+    "hypothesis>=6.131.0",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
