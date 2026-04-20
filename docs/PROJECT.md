@@ -1,6 +1,6 @@
 # ccrush-ai — Product Roadmap
 
-**Last Updated**: 2026-04-20  
+**Last Updated**: 2026-04-20 (release tracker)  
 **Roadmap Owner**: roadmap agent  
 **Strategic Vision**: Build a production-quality Windows Python application that
 autonomously plays Candy Crush-style match-3 games, maximizes score by applying
@@ -15,6 +15,7 @@ without any game-specific SDK access or memory reading.
 | Date & Time | Change | Rationale |
 |---|---|---|
 | 2026-04-20 09:00 | Initial roadmap created | Project inception |
+| 2026-04-20 15:15 | Epic 1.1 → Delivered; release tracker updated; Plan 002 committed and released as v0.1.0-rc.1 | QA Complete, UAT Approved, pushed to origin/main |
 
 ---
 
@@ -41,7 +42,7 @@ Establish the testing foundation for all future work.
 ### Epic 1.1: Core Data Models and Rules Engine
 
 **Priority**: P0  
-**Status**: Planned
+**Status**: Delivered
 
 **User Story**:  
 As a developer building on this codebase,  
@@ -60,19 +61,20 @@ dependency on a live game or screen capture.
 - None (EPO — no prior epics required).
 
 **Acceptance Criteria**:
-- [ ] `CandyColor`, `SpecialType`, `CellState`, `GameState`, `Move`, `SimResult`,
+- [x] `CandyColor`, `SpecialType`, `CellState`, `GameState`, `Move`, `SimResult`,
       `RankedMove` models defined with Pydantic v2.
-- [ ] `MatchDetector` correctly identifies 3-, 4-, 5-in-a-row and T/L shapes.
-- [ ] `GravityEngine` correctly drops cells after clearing.
-- [ ] `CascadeSimulator` iterates until stable with correct depth tracking.
-- [ ] `MoveGenerator` produces only legal, adjacent moves that produce at least
+- [x] `MatchDetector` correctly identifies 3-, 4-, 5-in-a-row and T/L shapes.
+- [x] `GravityEngine` correctly drops cells after clearing.
+- [x] `CascadeSimulator` iterates until stable with correct depth tracking.
+- [x] `MoveGenerator` produces only legal, adjacent moves that produce at least
       one match.
-- [ ] `SyntheticBoard` generates reproducible boards of configurable size.
-- [ ] Unit tests with > 80% function coverage.
-- [ ] Hypothesis property tests: all generated moves are adjacent and produce a match.
+- [x] `SyntheticBoard` generates reproducible boards of configurable size.
+- [x] Unit tests with > 80% function coverage.
+- [x] Hypothesis property tests: all generated moves are adjacent and produce a match.
 
 **Status Notes**:
 - 2026-04-20: Epic defined at project inception.
+- 2026-04-20: **Delivered** — 71 tests passing (unit/property/integration), 100% statement coverage, ruff/mypy clean. Plan 002 committed and released as `v0.1.0-rc.1`.
 
 ---
 
@@ -471,13 +473,18 @@ So that I don't need to use a terminal at all.
 
 | Plan ID | Title | UAT Status | Committed |
 |---|---|---|---|
-| — | Epic 1.1: Core Data Models | Not started | ✗ |
-| — | Epic 1.2: Vision Pipeline | Not started | ✗ |
-| — | Epic 1.3: Greedy Bot | Not started | ✗ |
+| 002 | Epic 1.1: Core Data Models and Rules Engine | Approved | ✓ |
+| — | Epic 1.2: Screen Capture and Vision Pipeline | Not started | ✗ |
+| — | Epic 1.3: Greedy Bot with Windows Input Execution | Not started | ✗ |
 
-**Release Status**: 0 of 3 epics started  
+**Release Status**: 1 of 3 epics committed  
 **Ready for Release**: No  
-**Blocking Items**: All Phase 0 implementation work pending.
+**Blocking Items**: Epics 1.2 and 1.3 not yet implemented.
+
+### Previous Releases
+| Version | Date | Plans Included | Status |
+|---------|------|----------------|--------|
+| v0.1.0-rc.1 | 2026-04-20 | 002 | Released (partial — Epic 1.1 only) |
 
 ### Previous Releases
 
